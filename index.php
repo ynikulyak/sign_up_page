@@ -49,7 +49,16 @@
 		});
 		
 		$("#state").on("change", function(){
-			alert($("#state").val());
+			//alert($("#state").val());
+			$.ajax({
+				method: "GET",
+				url: "https://cst336.herokuapp.com/projects/api/countyListAPI.php",
+				dataType: "json",
+				data: {"state", $("#state").val()},
+				success: function(result, status){
+					alert(result[0].county);
+				}
+			});
 		});
 	</script>
 </body>
