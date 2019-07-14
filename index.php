@@ -32,6 +32,7 @@
 	<input type="submit" value="Sign up!">
 	</form>
 	<script>
+		var usernameAvailable = false;
 		$("#zip").on("change", function(){
 			//alert( $("#zip").val() ); 
 			$.ajax({
@@ -67,7 +68,6 @@
 		
 		$("#username").change(function(){
 			//alert($("#username").val());
-			var usernameAvailable = false;
 		$.ajax({
 			method: "GET",
 			url: "https://cst336.herokuapp.com/projects/api/usernamesAPI.php",
