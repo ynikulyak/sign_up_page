@@ -27,7 +27,7 @@
 	Select a county: <select id="county"></select><br><br>
 
 	Desired Username: <input type="text" name="username" id="username"><span id="usernameError"></span><br>
-	Password: <input type="password" name="password" id="password"><br>
+		Password: <input type="password" name="password" id="password"><span id="passwordError"></span><br>
 		Password Again: <input type="password" id="passwordAgain"><span id="passwordAgainError"></span><br>
 	<input type="submit" value="Sign up!">
 	</form>
@@ -62,6 +62,19 @@
 					for(let i = 0; i < result.length; i++){
 						$("#county").append("<option>" + result[i].county + "</option>");
 					}
+				}
+			});
+		});
+		
+		$("#state").on("change", function(){
+			$.ajax({
+				method: "GET",
+				url: "https://cst336.herokuapp.com/projects/api/state_abbrAPI.php",
+				dataType: "json",
+				data: {"state": $("#state").val()},
+				success: function(result, status){
+					for(let i = 0; i < result.length; i++){
+						$("#state").append("<option>" + result[i].state + "</option>");
 				}
 			});
 		});
@@ -103,6 +116,9 @@
 			if($("#username").val().length == 0){
 				$("#usernameError").html("Username is required!");
 				isValid = false;
+			}
+			if($("#password").val().length < 6){
+				$("#passwordError").html("Password length must be at least 6 characters!");
 			}
 			if($("#password").val() != $("passwordAgain").val()){
 				$("#passwordAgainError").html("Password mismatch!");
