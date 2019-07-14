@@ -36,7 +36,7 @@
 			//alert( $("#zip").val() ); 
 			$.ajax({
 				method: "GET",
-				url: "http​s://cst336.herokuapp.com/projects/api/cityInfoAPI.php",
+				url: "https://cst336.herokuapp.com/projects/api/cityInfoAPI.php",
 				dataType: "json",
 				data: {"zip": $("#zip").val()},
 				success: function(result, status){
