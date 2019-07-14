@@ -40,7 +40,8 @@
 				dataType: "json",
 				data: {"zip": $("#zip").val()},
 				success: function(result, status){
-					alert(result.city);
+					//alert(result.city);
+					$("#city").html(result.city);
 				}
 			});
 		});
