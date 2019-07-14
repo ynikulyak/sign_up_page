@@ -96,12 +96,12 @@
 		});
 		
 		function isFormValid(){
-			isValid = true;
+			var isValid = true;
 			if(!usernameAvailable){
 				isValid = false;
 			}
 			if($("#username").val().length == 0){
-				$("usernameError").html("Username is required!");
+				$("#usernameError").html("Username is required!");
 				isValid = false;
 			}
 			if($("#password").val() != $("passwordAgain").val()){
