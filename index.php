@@ -57,6 +57,7 @@
 				data: {"state": $("#state").val()},
 				success: function(result, status){
 					//alert(result[0].county);
+					$("#county").html("<option> Select One </option>");
 					for(let i = 0; i < result.length; i++){
 						$("#county").append("<option>" + result[i].county + "</option>");
 					}
