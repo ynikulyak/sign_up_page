@@ -26,7 +26,7 @@
 
 	Select a county: <select id="county"></select><br><br>
 
-	Desired Username: <input type="text" name="username" id="username"><br>
+	Desired Username: <input type="text" name="username" id="username"><span id="usernameError"></span><br>
 	Password: <input type="password" name="password" id="password"><br>
 	Password Again: <input type="password" id="passwordAgain"><br>
 	<input type="submit" value="Sign up!">
@@ -64,6 +64,27 @@
 				}
 			});
 		});
+		
+		$("#username").on("change", function(){
+			alert($("#username").val());
+		$.ajax({
+			method: "GET",
+			url: "https://herokuapp.com/projects/api/usernamesAPI.php",
+			dataType: "json",
+			data: ("username": $("#username").val()),
+			success: function(result, status){
+
+				if(result.available){
+					$("#usernameError").html("Username is available");
+					$("#usernameError").css("color", "green");
+				}
+				else{
+					$("#usernameError").html("Username is unavailable");
+					$("#usernameError").css("color", "red");
+				}
+			}
+		});
+	});
 	</script>
 </body>
 </html>
