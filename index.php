@@ -6,7 +6,7 @@
 </head>
 <body>
 	<h1>Sign Up</h1>
-	<form>
+	<form method="post">
 	First Name: <input type="text" name="fname"><br>
 	Last Name: <input type="text" name="lname"><br>
 	Gender: <input type="radio" name="gender" value="m"> Male
