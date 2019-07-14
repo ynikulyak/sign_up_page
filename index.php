@@ -6,7 +6,7 @@
 </head>
 <body>
 	<h1>Sign Up</h1>
-
+	<form>
 	First Name: <input type="text" name="fname"><br>
 	Last Name: <input type="text" name="lname"><br>
 	Gender: <input type="radio" name="gender" value="m"> Male
@@ -30,7 +30,7 @@
 	Password: <input type="password" name="password" id="password"><br>
 	Password Again: <input type="password" id="passwordAgain"><br>
 	<input type="submit" value="Sign up!">
-
+	</form>
 	<script>
 		$("#zip").on("change", function(){
 			//alert( $("#zip").val() ); 
