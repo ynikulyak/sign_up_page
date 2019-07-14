@@ -43,7 +43,7 @@
 					//alert(result.city);
 					$("#city").html(result.city);
 					$("#latitude").html(result.latitude);
-					$("#longt").html(result.longt);
+					$("#longt").html(result.longitude);
 				}
 			});
 		});
