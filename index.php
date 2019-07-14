@@ -14,8 +14,8 @@
 
 	Zip Code: <input type="text" name="zip" id="zip"><br>
 	City: <span id="city"></span><br>
-	Latitude: <br>
-	Longitude: <br><br>
+	Latitude: <span id="latitude"></span> <br>
+	Longitude: <span id="longt"></span> <br><br>
 	State:
 	<select id="state" name="state">
 		<option value="">Select One</option>
@@ -42,6 +42,8 @@
 				success: function(result, status){
 					//alert(result.city);
 					$("#city").html(result.city);
+					$("#latitude").html(result.latitude);
+					$("#longt").html(result.longt);
 				}
 			});
 		});
