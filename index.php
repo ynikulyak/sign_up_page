@@ -28,7 +28,7 @@
 
 	Desired Username: <input type="text" name="username" id="username"><span id="usernameError"></span><br>
 	Password: <input type="password" name="password" id="password"><br>
-	Password Again: <input type="password" id="passwordAgain"><br>
+		Password Again: <input type="password" id="passwordAgain"><span id="passwordAgainError"></span><br>
 	<input type="submit" value="Sign up!">
 	</form>
 	<script>
@@ -67,6 +67,7 @@
 		
 		$("#username").change(function(){
 			//alert($("#username").val());
+			var usernameAvailable = false;
 		$.ajax({
 			method: "GET",
 			url: "https://cst336.herokuapp.com/projects/api/usernamesAPI.php",
@@ -77,14 +78,38 @@
 				if(result.available){
 					$("#usernameError").html("Username is available");
 					$("#usernameError").css("color", "green");
+					usernameAvailable = true;
 				}
 				else{
 					$("#usernameError").html("Username is unavailable");
 					$("#usernameError").css("color", "red");
+					usernameAvailable = false;
 				}
 			}
 		});
 	});
+		
+		$("#signupForm").on("submit", function(event){
+			if(!isFormValid()){
+				event.preventDefault();
+			}
+		});
+		
+		function isFormValid(){
+			isValid = true;
+			if(!usernameAvailable){
+				isValid = false;
+			}
+			if($("#username").val().length == 0){
+				$("usernameError").html("Username is required!");
+				isValid = false;
+			}
+			if($("#password").val() != $("passwordAgain").val()){
+				$("#passwordAgainError").html("Password mismatch!");
+				isValid = false;
+			}
+			return isValid;
+		}
 	</script>
 </body>
 </html>
