@@ -65,8 +65,8 @@
 			});
 		});
 		
-		$("#username").on("change", function(){
-			alert($("#username").val());
+		$("#username").change(function(){
+			//alert($("#username").val());
 		$.ajax({
 			method: "GET",
 			url: "https://herokuapp.com/projects/api/usernamesAPI.php",
