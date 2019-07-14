@@ -6,7 +6,7 @@
 </head>
 <body>
 	<h1>Sign Up</h1>
-	<form method="post">
+	<form method="post" action="welcome.php">
 	First Name: <input type="text" name="fname"><br>
 	Last Name: <input type="text" name="lname"><br>
 	Gender: <input type="radio" name="gender" value="m"> Male
