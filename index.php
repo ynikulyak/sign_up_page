@@ -56,7 +56,10 @@
 				dataType: "json",
 				data: {"state": $("#state").val()},
 				success: function(result, status){
-					alert(result[0].county);
+					//alert(result[0].county);
+					for(let i = 0; i < result.length; i++){
+						$("#county").append("<option>" + result[i].county + "</option>");
+					}
 				}
 			});
 		});
