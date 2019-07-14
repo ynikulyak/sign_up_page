@@ -71,7 +71,7 @@
 			method: "GET",
 			url: "https://herokuapp.com/projects/api/usernamesAPI.php",
 			dataType: "json",
-			data: ("username": $("#username").val()),
+			data: {"username": $("#username").val()},
 			success: function(result, status){
 
 				if(result.available){
