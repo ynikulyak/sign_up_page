@@ -47,6 +47,10 @@
 				}
 			});
 		});
+		
+		$("#state").on("change", function(){
+			alert($("#state").val());
+		});
 	</script>
 </body>
 </html>
