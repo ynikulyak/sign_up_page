@@ -46,7 +46,7 @@
 			});
 		});
 		
-		$("#state").change(function(){
+		
 			$.ajax({
 				method: "GET",
 				url: "https://cst336.herokuapp.com/projects/api/state_abbrAPI.php",
@@ -59,7 +59,7 @@
 				}
 				}
 			});
-		});
+	
 		
 		$("#state").on("change", function(){
 			//alert($("#state").val());
