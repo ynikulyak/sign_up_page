@@ -70,7 +70,7 @@
 				dataType: "json",
 				data: {"state": $("#state").val()},
 				success: function(result, status){
-					$("#state").html("<option value="">Select One</option>");
+					$("#state").html("<option>Select One</option>");
 					for(let i = 0; i < result.length; i++){
 						$("#state").append("<option>" + result[i].state + "</option>");
 				}
