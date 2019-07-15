@@ -59,7 +59,7 @@
 				success: function(result, status){
 					$("#state").html("<option>Select One</option>");
 					for(let i = 0; i < result.length; i++){
-						$("#state").append("<option>" + result[i].usps + "</option>");
+						$("#state").append('<option value="' + result[i].usps.toLowerCase() + '">' + result[i].usps + '</option>');
 					}
 				}
 			});
