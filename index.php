@@ -119,6 +119,7 @@
 			}
 			if($("#password").val().length < 6){
 				$("#passwordError").html("Password length must be at least 6 characters!");
+				isValid = false;
 			}
 			if($("#password").val() != $("passwordAgain").val()){
 				$("#passwordAgainError").html("Password mismatch!");
