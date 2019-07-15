@@ -39,13 +39,13 @@
 				data: {"zip": $("#zip").val()},
 				success: function(result, status){
 					//alert(result.city);
-					if(result.length == 5){
-					$("#city").html(result.city);
-					$("#latitude").html(result.latitude);
-					$("#longt").html(result.longitude);
-		}else{
-			$("#zipError").html("Zip code not found");
-		}
+					if($("#zip")val().length == 5){
+						$("#city").html(result.city);
+						$("#latitude").html(result.latitude);
+						$("#longt").html(result.longitude);
+					}else{
+						$("#zipError").html("Zip code not found");
+					}
 				}
 			});
 		});
@@ -60,7 +60,7 @@
 					$("#state").html("<option>Select One</option>");
 					for(let i = 0; i < result.length; i++){
 						$("#state").append("<option>" + result[i].usps + "</option>");
-				}
+					}
 				}
 			});
 	
