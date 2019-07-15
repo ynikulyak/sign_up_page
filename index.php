@@ -18,10 +18,7 @@
 	Longitude: <span id="longt"></span> <br><br>
 	State:
 	<select id="state" name="state">
-		<option value="">Select One</option>
-		<option value="ca">California</option>
-		<option value="ny">New York</option>
-		<option value="tx">Texas</option>
+		
 	</select><br>
 
 	Select a county: <select id="county"></select><br><br>
@@ -66,13 +63,14 @@
 			});
 		});
 		
-		$("#state").on("change", function(){
+		$("#state").change(function(){
 			$.ajax({
 				method: "GET",
 				url: "https://cst336.herokuapp.com/projects/api/state_abbrAPI.php",
 				dataType: "json",
 				data: {"state": $("#state").val()},
 				success: function(result, status){
+					$("#state").html("<option value="">Select One</option>");
 					for(let i = 0; i < result.length; i++){
 						$("#state").append("<option>" + result[i].state + "</option>");
 				}
