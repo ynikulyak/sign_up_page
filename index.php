@@ -74,6 +74,7 @@
 					for(let i = 0; i < result.length; i++){
 						$("#state").append("<option>" + result[i].state + "</option>");
 				}
+				}
 			});
 		});
 		
