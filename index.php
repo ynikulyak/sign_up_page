@@ -46,6 +46,21 @@
 			});
 		});
 		
+		$("#state").change(function(){
+			$.ajax({
+				method: "GET",
+				url: "https://cst336.herokuapp.com/projects/api/state_abbrAPI.php",
+				dataType: "json",
+				data: {"state": $("#state").val()},
+				success: function(result, status){
+					$("#state").html("<option>Select One</option>");
+					for(let i = 0; i < result.length; i++){
+						$("#state").append("<option>" + result[i].state + "</option>");
+				}
+				}
+			});
+		});
+		
 		$("#state").on("change", function(){
 			//alert($("#state").val());
 			$.ajax({
@@ -63,20 +78,7 @@
 			});
 		});
 		
-		$("#state").change(function(){
-			$.ajax({
-				method: "GET",
-				url: "https://cst336.herokuapp.com/projects/api/state_abbrAPI.php",
-				dataType: "json",
-				data: {"state": $("#state").val()},
-				success: function(result, status){
-					$("#state").html("<option>Select One</option>");
-					for(let i = 0; i < result.length; i++){
-						$("#state").append("<option>" + result[i].state + "</option>");
-				}
-				}
-			});
-		});
+		
 		
 		$("#username").change(function(){
 			//alert($("#username").val());
