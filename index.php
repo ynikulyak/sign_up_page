@@ -12,7 +12,7 @@
 	Gender: <input type="radio" name="gender" value="m"> Male
 			<input type="radio" name="gender" value="f"> Female<br><br>
 
-	Zip Code: <input type="text" name="zip" id="zip"><span id="zipError></span><br>
+	Zip Code: <input type="text" name="zip" id="zip"><span id="zipError"></span><br>
 	City: <span id="city"></span><br>
 	Latitude: <span id="latitude"></span> <br>
 	Longitude: <span id="longt"></span> <br><br>
