@@ -55,7 +55,7 @@
 				success: function(result, status){
 					$("#state").html("<option>Select One</option>");
 					for(let i = 0; i < result.length; i++){
-						$("#state").append("<option>" + result[i].state + "</option>");
+						$("#state").append("<option>" + result[i].usps + "</option>");
 				}
 				}
 			});
